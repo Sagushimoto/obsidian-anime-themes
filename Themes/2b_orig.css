@@ -1,0 +1,166 @@
+/* Custom Obsidian Theme (Darling in the Franxx - Zero Two Theme) created by Cedric Winkler */
+/* Credits
+   Zero Two Standing Pose IMG by: https://github.com/Unthrottled
+   Zero Two Sitting at Night GIF by: https://tenor.com/users/sofia_11l */
+
+body {
+    --color-variable01: #bababa;
+    --color-variable02: #dadada;
+    --color-variable03: gray;
+    --color-variable03_rgb: 255,182,193;
+    --color-variable04: palevioletred;
+    --image-variable01: url(https://i.imgur.com/L4r5Wcn.gif);
+    --image-variable02: url(https://i.imgur.com/L4r5Wcn.gif);
+    --image-variable03: url("https://i.imgur.com/BdIAGpu.png");
+}
+
+/* IMAGES */
+/* Graph Background */
+.workspace-leaf-content[data-type="graph"] .view-content {
+    z-index: 0;
+}
+.workspace-leaf-content[data-type="graph"] .view-content::after {
+    z-index: -1;
+    content: "";
+    position: fixed;
+    background-image: var(--image-variable01);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(0deg); /* 0deg is the base value or just remove it entirely */
+    transform-origin: 0%; /* 50% is the base value */
+    filter: blur(5px) brightness(50%) saturate(50%);
+    top: 20px;
+    left: 100px;
+    right: 0px;
+    bottom: 0px;
+}
+
+/* Editor Background */
+.workspace-leaf-content[data-type="markdown"] .view-content {
+    z-index: 0;
+}
+.workspace-leaf-content[data-type="markdown"] .view-content::after {
+    z-index: -1;
+    content: "";
+    position: fixed;
+    background-image: var(--image-variable02);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(0deg); /* 0deg is the base value or just remove it entirely */
+    transform-origin: 50%; /* 50% is the base value */
+    filter: blur(5px) brightness(50%) saturate(50%);
+    top: 20px;
+    left: 00px;
+    right: 0px;
+    bottom: 0px;
+}
+
+/* Sidebar Background */
+/* Draw the Background Image */
+/* Sidebar Background */
+.nav-files-container {
+    background-image: var(--image-variable03);
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid var(--background-modifier-border);
+    position: relative;
+    z-index: 1;
+    min-height: 100vh; /* Убедимся, что сайдбар всегда занимает полную высоту */
+}
+
+.nav-files-container:before {
+    content: "";
+    /* Убрали размытие */
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.nav-files-container:after {
+    content: "";
+    background-color: var(--background-secondary);
+    opacity: .100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Навигационные элементы остаются поверх фона */
+.nav-folder, .nav-folder-title-content, .nav-file-title-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.nav-folder {
+    position: relative;
+    z-index: 3; /* Убедимся, что папки и файлы видны */
+}
+
+
+/* TEXT */
+/* The Title of the Note at the Top of the Editor */
+.view-header-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-variable03) !important;
+}
+
+/* Folder Bar Text Header */
+.nav-folder.mod-root > .nav-folder-title {
+    font-weight: bold;
+    color: var(--color-variable03) !important;
+}
+
+.workspace-tab-header {
+    color: var(--color-variable01);
+}
+/* OBJECTS & REST TEXT */
+/* Editor Mode --- Line Color */
+.markdown-rendered hr {
+    border-color: var(--color-variable03);
+    border-width: 2px;
+    opacity: .80;
+}
+
+/* Changing the List Connection Lines thickness */
+.nav-folder.mod-root .nav-folder > .nav-folder-children {
+    border-width: 2px;
+}
+
+.markdown-source-view.mod-cm6 .cm-indent::before {
+    border-width: 2px;
+}
+
+.markdown-rendered.show-indentation-guide li > ol::before {
+    border-width: 2px;
+}
+
+/* Changing Every Icon Color, Some Text Color - Hover/View Mode */
+body {
+    --interactive-accent: var(--color-variable04);
+    --interactive-accent-hover: var(--color-base-35); /* Settings Menu - Button Hover Color  */
+    --text-on-accent: var(--color-variable01);
+    --text-faint: var(--color-variable03);
+    --text-accent: var(--color-variable03);
+    --text-accent-hover: var(--color-variable04);
+    --inline-title-color: var(--color-variable03);
+    --indentation-guide-color: rgba(var(--color-variable03_rgb), 0.2);
+    --indentation-guide-color-active: rgba(var(--color-variable03_rgb), 0.3);
+    ---titlebar-background: var(--color-variable04);
+}
+
+.theme-dark {
+    --interactive-hover: var(--color-base-35); /* Settings Menu - Button Hover Color  */
+    ---color-base-30: var(--color-variable04);
+    --color-base-70: var(--color-variable02);
+    --color-base-100: var(--color-variable01);
+}
