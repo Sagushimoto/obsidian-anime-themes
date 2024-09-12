@@ -1,6 +1,6 @@
 # Obsidian Anime Themess
 
-##Introduction
+## Introduction
 
 I found some anime themes for Obsidian, but I wanted to make my own and share them.
 
